@@ -1,12 +1,12 @@
 const express = require("express");
 const app=express()
-
+const cors=require('cors')
 //importing model here 
 
 const Data=require("./models/data.model.js");
 const mongoose=require ("mongoose");
 
-
+app.use(cors())
 //middleware
 
 app.use(express.json())
@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended :false}))
 
 //fetching Data
 
-app.get("/",(req,res)=>{
+app.get("/",(req,res)=>{    
   res.send("hello");
 });
 
